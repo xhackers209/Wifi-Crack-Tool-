@@ -352,8 +352,8 @@ Termux
 pkg update -y
 pkg install python git -y
 
-git clone https://github.com/YOUR-USERNAME/awais-x-hacker.git
-cd awais-x-hacker
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-
+cd Wifi-Crack-Tool-
 
 chmod +x install.sh
 bash install.sh
@@ -366,7 +366,7 @@ python3 main.py
 sudo apt update
 sudo apt install python3 git -y
 
-git clone https://github.com/YOUR-USERNAME/awais-x-hacker.git
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-
 cd awais-x-hacker
 
 chmod +x install.sh
@@ -379,7 +379,7 @@ python3 main.py
 
 brew install python3 git
 
-git clone https://github.com/YOUR-USERNAME/awais-x-hacker.git
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-
 cd awais-x-hacker
 
 chmod +x install.sh
@@ -390,7 +390,7 @@ python3 main.py
 
 "15 // WINDOWS"
 
-git clone https://github.com/YOUR-USERNAME/awais-x-hacker.git
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-
 cd awaiz-x-hacker
 python main.py
 
@@ -442,7 +442,7 @@ git branch -M main
 
 CONNECT
 
-git remote add origin https://github.com/YOUR-USERNAME/awais-x-hacker.git
+git remote add origin https://github.com/xhackers209/Wifi-Crack-Tool-
 
 PUSH
 
