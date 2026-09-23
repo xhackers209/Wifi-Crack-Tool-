@@ -1,736 +1,215 @@
-<div align="center">
+<p align="center">
+  <img src="https://img.shields.io/badge/AWAIS%20X%20HASEEB-WPA2%20AUDIT%20ENGINE-red?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Version-v6.2%20ULTIMATE-brightgreen?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Python-3.7%2B-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Platform-Termux%20%7C%20Kali%20%7C%20Linux%20%7C%20macOS%20%7C%20Windows-lightgrey?style=for-the-badge"/>
+</p>
 
-# ⚡ WIFI BLACKBOX
+# AWAIS X HASEEB — WPA2 Audit Engine v6.2 ULTIMATE
 
-### WPA2 Security Research & Authorized WiFi Testing Platform
+**Built-in REAL WPA2 cracker — pure Python, NO external tools required.**
+Parses real `.cap` / `.pcap` / `.pcapng` captures, extracts 4-way
+handshakes and PMKIDs, and performs REAL PBKDF2-HMAC-SHA1 (4096) →
+PRF-512 PTK → EAPOL-Key MIC verification — the exact same mathematics
+used by aircrack-ng and hashcat.
 
-**A modern terminal-based cybersecurity research project for controlled security testing.**
+Works on **rooted Termux, Kali Linux, any Linux, macOS and Windows** —
+anywhere Python 3.7+ runs.
 
-<br>
-
-[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Platform](https://img.shields.io/badge/Platform-Termux%20%7C%20Linux%20%7C%20macOS%20%7C%20Windows-111111?style=for-the-badge)](#-installation)
-[![Security](https://img.shields.io/badge/Mode-AUTHORIZED%20TESTING-00C853?style=for-the-badge)](#-disclaimer)
-[![Status](https://img.shields.io/badge/Status-ACTIVE-00E676?style=for-the-badge)](#-project-status)
-[![Version](https://img.shields.io/badge/Release-v6.0-8A2BE2?style=for-the-badge)](#-project-status)
-
-<br>
-
-```text
-╔══════════════════════════════════════════════════════════════════════╗
-║                                                                      ║
-║   ██╗    ██╗██╗███████╗██╗    ██████╗ ██╗      █████╗ ██╗  ██╗     ║
-║   ██║    ██║██║██╔════╝██║    ██╔══██╗██║     ██╔══██╗╚██╗██╔╝     ║
-║   ██║ █╗ ██║██║█████╗  ██║    ██████╔╝██║     ███████║ ╚███╔╝      ║
-║   ██║███╗██║██║██╔══╝  ██║    ██╔══██╗██║     ██╔══██║ ██╔██╗      ║
-║   ╚███╔███╔╝██║██║     ██║    ██████╔╝███████╗██║  ██║██╔╝ ██╗     ║
-║    ╚══╝╚══╝ ╚═╝╚═╝     ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝     ║
-║                                                                      ║
-║                    BLACKBOX SECURITY LAB                             ║
-║                                                                      ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
-
-**BUILD • TEST • ANALYZE • SECURE**
-
-</div>
+> ⚠️ **EDUCATIONAL USE ONLY.** Test **ONLY** on WiFi networks you own
+> or have explicit written permission to audit.
 
 ---
 
-# 📌 About
-
-**WIFI BLACKBOX** is a Python-based terminal cybersecurity research project focused on controlled wireless security testing and educational security research.
-
-The project provides a structured terminal interface for laboratory workflows involving:
-
-- Wireless security concepts
-- WPA2 research
-- Offline key-derivation concepts
-- Controlled dataset processing
-- Authorized capture analysis
-- Performance measurement
-- Security telemetry
-- Session information
-- Security reporting
-
-The project is intended for **authorized environments only**.
-
----
-
-# ✨ Features
-
-```text
-⚡ Cyber-style terminal interface
-🔐 WPA2 security research
-🧪 Controlled laboratory workflows
-📊 Dataset / wordlist analysis
-📡 Authorized capture analysis
-🧬 Offline key-derivation research
-📈 Processing telemetry
-📝 Security session reporting
-🖥️ Termux support
-🐧 Linux support
-🍎 macOS support
-🪟 Windows support
-```
-
----
-
-# 🧩 Project Modules
-
-| File | Purpose |
-|---|---|
-| `banner.py` | Startup banner and branding |
-| `wordlist.py` | Dataset and wordlist processing |
-| `capture.py` | Authorized capture-file analysis |
-| `engine.py` | Core processing and verification logic |
-| `ui.py` | Terminal interface and status display |
-| `main.py` | Main application controller |
-| `requirements.txt` | Python dependencies |
-| `install.sh` | Installation/setup script |
-| `README.md` | Project documentation |
-
----
-
-# 🏗️ Architecture
-
-```text
-                         ┌───────────────────┐
-                         │    USER INPUT     │
-                         └─────────┬─────────┘
-                                   │
-                                   ▼
-                         ┌───────────────────┐
-                         │   SESSION CONFIG  │
-                         └─────────┬─────────┘
-                                   │
-              ┌────────────────────┼────────────────────┐
-              │                    │                    │
-              ▼                    ▼                    ▼
-       ┌────────────┐       ┌────────────┐       ┌────────────┐
-       │  DATASET   │       │  CAPTURE   │       │  LAB DATA  │
-       └──────┬─────┘       └──────┬─────┘       └──────┬─────┘
-              │                    │                    │
-              └────────────────────┼────────────────────┘
-                                   │
-                                   ▼
-                         ┌───────────────────┐
-                         │    ENGINE CORE    │
-                         └─────────┬─────────┘
-                                   │
-                                   ▼
-                         ┌───────────────────┐
-                         │    VERIFICATION   │
-                         └─────────┬─────────┘
-                                   │
-                         ┌─────────┴─────────┐
-                         ▼                   ▼
-                  ┌────────────┐       ┌────────────┐
-                  │   RESULT   │       │  REPORTING │
-                  └────────────┘       └────────────┘
-```
-
----
-
-# 📊 Terminal Telemetry
-
-Example interface:
-
-```text
-╔══════════════════════════════════════════════════════════════╗
-║                     LIVE TELEMETRY                           ║
-╠══════════════════════════════════════════════════════════════╣
-║                                                              ║
-║  SESSION      : ACTIVE                                       ║
-║  STATE        : PROCESSING                                   ║
-║  WORKERS      : 08                                           ║
-║                                                              ║
-║  CPU          : ███████████████░░░░  76%                    ║
-║  QUEUE        : █████████████░░░░░  68%                     ║
-║  PROGRESS     : ████████████████░░  84%                     ║
-║                                                              ║
-║  DATASET      : CONTROLLED TEST DATA                        ║
-║  ELAPSED      : 00:03:42                                    ║
-║                                                              ║
-║  [✓] ENGINE INITIALIZED                                     ║
-║  [✓] DATASET LOADED                                         ║
-║  [✓] PROCESSING READY                                       ║
-║  [✓] VERIFICATION READY                                     ║
-║  [✓] TELEMETRY ACTIVE                                       ║
-║                                                              ║
-║  STATUS >>> SESSION ACTIVE                                  ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-```
-
-> The values above are example interface output only.
-
----
-
-# 📂 Project Structure
-
-```text
-Wifi-Crack-Tool-/
-│
-├── banner.py
-├── capture.py
-├── engine.py
-├── main.py
-├── ui.py
-├── wordlist.py
-│
-├── requirements.txt
-├── install.sh
-├── README.md
-│
-├── reports/
-│   └── .gitkeep
-│
-├── lab/
-│   └── .gitkeep
-│
-└── docs/
-    └── architecture.md
-```
-
----
-
-# 🚀 Installation
-
-## 📱 Termux
-
-### 1. Update packages
+## 🚀 Quick Start (GitHub Clone — Har Platform Pe Same)
 
 ```bash
-pkg update -y
-```
-
-### 2. Install Git and Python
-
-```bash
-pkg install git python -y
-```
-
-### 3. Check Git
-
-```bash
-git --version
-```
-
-### 4. Check Python
-
-```bash
-python --version
-```
-
-### 5. Clone the repository
-
-```bash
-git clone https://github.com/xhackers209/Wifi-Crack-Tool-
-```
-
-### 6. Enter the repository
-
-```bash
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
 cd Wifi-Crack-Tool-
+python3 main.py --selftest      # proof it works (~10 sec)
+python3 main.py                 # run the tool
 ```
 
-### 7. Make installer executable
-
-```bash
-chmod +x install.sh
-```
-
-### 8. Run installer
-
-```bash
-bash install.sh
-```
-
-### 9. Start the application
-
-```bash
-python main.py
-```
+Windows pe sirf `python3` ki jagah `py` likhna.
 
 ---
 
-# 🐧 Linux
+## 📱 Platform Setup
 
-## Debian / Ubuntu based systems
+### 🤖 Rooted Android — Termux
 
-### 1. Update package lists
+```bash
+pkg update && pkg upgrade -y
+pkg install git python -y
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
+cd Wifi-Crack-Tool-
+python main.py --selftest
+python main.py
+
+# OPTIONAL — external engine + capture tools (root needed for capture):
+pkg install root-repo -y
+pkg install aircrack-ng hcxtools -y
+su -c "airmon-ng start wlan0"
+```
+
+### 🐉 Kali Linux
 
 ```bash
 sudo apt update
-```
-
-### 2. Install Git and Python
-
-```bash
-sudo apt install -y git python3 python3-pip
-```
-
-### 3. Check Git
-
-```bash
-git --version
-```
-
-### 4. Check Python
-
-```bash
-python3 --version
-```
-
-### 5. Clone the repository
-
-```bash
-git clone https://github.com/xhackers209/Wifi-Crack-Tool-
-```
-
-### 6. Enter the repository
-
-```bash
+sudo apt install -y git python3 aircrack-ng hcxtools
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
 cd Wifi-Crack-Tool-
+python3 main.py --selftest
+python3 main.py
+
+# capture a handshake from YOUR network:
+sudo airmon-ng start wlan0
+sudo airodump-ng -c <CHANNEL> --bssid <BSSID> -w capture wlan0mon
+# (the tool's menu [4] shows the full step-by-step guide)
 ```
 
-### 7. Make installer executable
+### 💻 Ubuntu / Debian / any Linux
 
 ```bash
-chmod +x install.sh
+sudo apt install -y git python3
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
+cd Wifi-Crack-Tool-
+python3 main.py --selftest
+python3 main.py
 ```
 
-### 8. Run installer
+### 🍎 macOS
 
 ```bash
-bash install.sh
+brew install python3            # if not already installed
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
+cd Wifi-Crack-Tool-
+python3 main.py --selftest
+python3 main.py
 ```
 
-### 9. Start the application
+### 🪟 Windows (CMD / PowerShell)
+
+```bat
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
+cd Wifi-Crack-Tool-
+py main.py --selftest
+py main.py
+```
+
+(aircrack-ng is not native to Windows — the **built-in engine is fully
+functional** on Windows. For capture, use WSL, Kali VM, or a Linux
+machine, then copy the `.cap` file over.)
+
+---
+
+## 📦 ZIP Se Install (Agar GitHub Na Chale)
 
 ```bash
+unzip WIFI_BLACKBOX_v6.2_ULTIMATE.zip
+cd WIFI_BLACKBOX_v6.2_ULTIMATE
+python3 main.py --selftest
 python3 main.py
 ```
 
 ---
 
-# 🍎 macOS
+## 🎯 Practical Demo Flow (Your Own Network)
 
-### 1. Check Git
+| Step | Menu | What it proves |
+|---|---|---|
+| 1 | `6` Benchmark | Real PBKDF2 speed on your machine |
+| 2 | `n` Scanner | Nearby networks — no root needed |
+| 3 | `4` Capture Guide | Exact airmon/airodump commands |
+| 4 | `1` REAL WPA2 Attack | **Real password recovery from .cap** |
+| 5 | `m` Mutations | Cracks `john` → `John123!` style passwords |
+| 6 | `k` Mask Attack | Brute-force `?l?l?l?l?d?d` patterns |
+| 7 | `5` Analyzer | Wordlist stats + crack-time estimate |
+| 8 | `8` Reports | Saved report for the examiner |
 
-```bash
-git --version
+---
+
+## 📁 Project Structure
+
+```
+├── main.py        # entry point + all menus
+├── handshake.py   # REAL capture parser + WPA2 crypto
+├── engine.py      # attack engine (threads, iterator, benchmark)
+├── rules.py       # mutations + mask engine
+├── scanner.py     # passive WiFi scanner (4 platforms)
+├── capture.py     # aircrack-ng / hashcat external integration
+├── wordlist.py    # wordlist tools + analyzer
+├── selftest.py    # --selftest proof mode
+├── ui.py          # display helpers
+├── banner.py      # banner + colors
+├── install.sh     # auto-installer
+├── .gitignore     # keeps captures & generated files out of git
+├── reports/       # auto-saved session reports
+└── lab/           # generated wordlists & test files
 ```
 
-If Git is not installed, install Git through your preferred macOS package manager or the official Git installer.
+---
 
-### 2. Install Python using Homebrew
+## ⚡ Honest Performance
+
+| Engine | Speed | Best for |
+|---|---|---|
+| Built-in (pure Python) | ~100–2000 PMK/s | Practical demos, weak passwords, mutations |
+| aircrack-ng (menu 3) | ~5k–50k/s | Medium wordlists |
+| hashcat GPU (menu 3) | ~50k–500k+/s | Huge wordlists, big masks |
+
+WPA2 uses PBKDF2-HMAC-SHA1 with 4096 iterations by design — that is
+what makes WiFi secure. Dictionary attacks succeed against **weak or
+common passwords**; long random passwords remain impractical to crack
+on any platform.
+
+---
+
+## 🧪 Self-Test
 
 ```bash
-brew install python
+python3 main.py --selftest
 ```
 
-### 3. Check Python
+Runs three checks: capture parsing, a REAL crack against a synthetic
+handshake, and an engine benchmark. Exit code `0` = everything works.
 
-```bash
-python3 --version
-```
+---
 
-### 4. Clone the repository
+## ⚠️ Disclaimer
 
-```bash
-git clone https://github.com/xhackers209/Wifi-Crack-Tool-
-```
+This software is provided for **authorized security education and
+auditing only**. You must only test networks you **own** or have
+**explicit written permission** to assess. Unauthorized access to
+computer networks is a criminal offence in most jurisdictions.
+The authors accept no liability for misuse.
 
-### 5. Enter the repository
+---
+
+## 📤 Developers — Code Push/Update Karne Ka Tareeqa
 
 ```bash
 cd Wifi-Crack-Tool-
+git add .
+git commit -m "describe your change"
+git push
 ```
 
-### 6. Make installer executable
+**Pehli baar push (agar repo khali hai):**
 
 ```bash
-chmod +x install.sh
+git init
+git add .
+git commit -m "v6.2 ULTIMATE — real WPA2 audit engine"
+git branch -M main
+git remote add origin https://github.com/xhackers209/Wifi-Crack-Tool-.git
+git push -u origin main
 ```
 
-### 7. Run installer
-
-```bash
-bash install.sh
-```
-
-### 8. Start the application
-
-```bash
-python3 main.py
-```
-
----
-
-# 🪟 Windows
-
-## PowerShell
-
-### 1. Check Git
-
-```powershell
-git --version
-```
-
-### 2. Install Git if it is not already installed
-
-```powershell
-winget install --id Git.Git -e --source winget
-```
-
-### 3. Close PowerShell
-
-```powershell
-exit
-```
-
-Open a new PowerShell window after Git installation.
-
-### 4. Check Git again
-
-```powershell
-git --version
-```
-
-### 5. Check Python
-
-```powershell
-python --version
-```
-
-### 6. Clone the repository
-
-```powershell
-git clone https://github.com/xhackers209/Wifi-Crack-Tool-
-```
-
-### 7. Enter the repository
-
-```powershell
-cd Wifi-Crack-Tool-
-```
-
-### 8. Start the application
-
-```powershell
-python main.py
-```
-
-> `install.sh` is a Unix shell script and is therefore not used directly from normal Windows PowerShell.
-
----
-
-# 🔎 Verify Your Environment
-
-Before running the project, you can verify the basic environment.
-
-## Check Git
-
-```bash
-git --version
-```
-
-## Check Python 3
-
-```bash
-python3 --version
-```
-
-## Check Python
-
-```bash
-python --version
-```
-
-## Check current directory
-
-```bash
-pwd
-```
-
-## List project files
-
-```bash
-ls
-```
-
-## Check Git repository
-
-```bash
-git status
-```
-
----
-
-# 🛠️ Diagnostics
-
-## Check Python syntax
-
-```bash
-python3 -m py_compile *.py
-```
-
-## Run with UTF-8 mode
-
-```bash
-python3 -X utf8 main.py
-```
-
-## Make main executable
-
-```bash
-chmod +x main.py
-```
-
-## Make installer executable
-
-```bash
-chmod +x install.sh
-```
-
----
-
-# 🔄 Updating an Existing Installation
-
-If the repository is already cloned, do not clone it again.
-
-## Enter the repository
-
-```bash
-cd Wifi-Crack-Tool-
-```
-
-## Check current status
-
-```bash
-git status
-```
-
-## Download the latest repository changes
-
-```bash
-git pull
-```
-
----
-
-# ❗ Troubleshooting
-
-## Git is not recognized
-
-If you see:
-
-```text
-git: command not found
-```
-
-install Git for your operating system and reopen the terminal.
-
-Then check:
-
-```bash
-git --version
-```
-
----
-
-## Python is not recognized
-
-Check:
-
-```bash
-python3 --version
-```
-
-Then check:
-
-```bash
-python --version
-```
-
-Use the Python command available on your operating system.
-
----
-
-## Repository directory not found
-
-Use the exact project directory:
-
-```bash
-cd Wifi-Crack-Tool-
-```
-
-The repository directory should remain consistent with the clone command.
-
----
-
-## Permission denied
-
-On Termux/Linux/macOS:
-
-```bash
-chmod +x install.sh
-```
-
-Then:
-
-```bash
-bash install.sh
-```
-
----
-
-## Repository already exists
-
-If Git reports that the destination directory already exists, enter it:
-
-```bash
-cd Wifi-Crack-Tool-
-```
-
-Then check:
-
-```bash
-git status
-```
-
----
-
-# 🧪 Authorized Research Workflow
-
-```text
-┌─────────────────────┐
-│   GET AUTHORIZATION │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│     BUILD LAB       │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│   CONTROLLED DATA   │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│    RUN RESEARCH     │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│  ANALYZE RESULTS    │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│   WRITE REPORT      │
-└─────────────────────┘
-```
-
----
-
-# 🔐 Security Scope
-
-This project is intended for:
-
-- Your own WiFi networks
-- Your own devices
-- Authorized penetration-testing environments
-- Isolated cybersecurity laboratories
-- Educational security research
-- Controlled datasets
-- Explicitly authorized testing
-
-Do not use this project against networks, devices, accounts, captures, or systems without permission.
-
-The user is responsible for authorization, scope, legal compliance, and responsible use.
-
----
-
-# 📜 Disclaimer ⚠️
-
-**This Tool Is Built By X HACKER TEAM For Testing Own WiFi Security. Don't Use Any Harmful Activity.**
-
-Use this project only for legal, educational, and authorized security testing.
-
-The developers do not encourage unauthorized access, disruption, data theft, or harmful activity.
-
----
-
-# 👨‍💻 Development & Open Source
-
-**Development by Awais Hacker With Haseeb Hacker**
-
-This project is developed for cybersecurity learning, research, and authorized WiFi security testing.
-
----
-
-# 📢 Join Official WhatsApp Channel
-
-Stay connected for project updates, cybersecurity content, development updates, and future releases.
-
-**Official WhatsApp Channel:**
-
-https://whatsapp.com/channel/0029VbBzlMlIt5rzSeMBE922
-
----
-
-# 📄 License
-
-Copyright (c) 2026 X HACKER TEAM
-
-This project is provided for educational and authorized cybersecurity research purposes.
-
-The software is provided **"AS IS"**, without warranty of any kind.
-
-Users are responsible for obtaining proper authorization before conducting security testing.
-
----
-
-# 📊 Project Status
-
-```text
-╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║                 WIFI BLACKBOX STATUS                         ║
-║                                                              ║
-║  CORE ENGINE             [ ONLINE ]                          ║
-║  TERMINAL UI             [ ONLINE ]                          ║
-║  DATASET MODULE          [ READY  ]                          ║
-║  CAPTURE MODULE          [ READY  ]                          ║
-║  VERIFICATION MODULE     [ READY  ]                          ║
-║  TELEMETRY               [ ACTIVE ]                          ║
-║  REPORTING               [ READY  ]                          ║
-║                                                              ║
-║              STATUS >>> AUTHORIZED LAB READY                ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-```
-
----
-
-<div align="center">
-
-# ⚡ WIFI BLACKBOX
-
-### AUTHORIZED SECURITY RESEARCH PLATFORM
-
-**BUILD • TEST • ANALYZE • SECURE**
-
-<br>
-
-**Developed by X HACKER TEAM**
-
-**Awais Hacker × Haseeb Hacker**
-
-<br>
-
-**Join Official WhatsApp Channel**
-
-https://whatsapp.com/channel/0029VbBzlMlIt5rzSeMBE922
-
-</div>
+**Note:** GitHub password se push nahi hone deta — **Personal Access Token (PAT)** chahiye:
+1. GitHub → Settings → Developer Settings → Personal Access Tokens → Tokens (classic)
+2. "repo" permission ke saath token banao
+3. Push karte waqt password ki jagah token paste karo
+
+> `.gitignore` ki wajah se `.cap` captures, reports aur generated files
+> kabhi repo mein push nahi hote — sirf code push hota hai ✅
