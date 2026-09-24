@@ -1,3 +1,0 @@
-# AWAIS X HACKER TEAM — WPA2 Audit Engine v6.2 ULTIMATE
-# No external packages needed — pure Python 3.7+ standard library.
-# Optional speed: install aircrack-ng / hashcat via your package manager.
