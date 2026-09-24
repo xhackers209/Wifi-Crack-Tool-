@@ -1,824 +1,230 @@
-<div align="center">
-
-# ⚡ AWAIS X HASEEB
-## WPA2 AUDIT ENGINE — v6.2 ULTIMATE
-
-<p>
-  <img src="https://img.shields.io/badge/AWAIS%20X%20HASEEB-WPA2%20AUDIT%20ENGINE-red?style=for-the-badge&logo=python"/>
-  <img src="https://img.shields.io/badge/VERSION-v6.2%20ULTIMATE-brightgreen?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/PYTHON-3.7%2B-blue?style=for-the-badge&logo=python"/>
-  <img src="https://img.shields.io/badge/PLATFORM-Termux%20%7C%20Kali%20%7C%20Linux%20%7C%20macOS%20%7C%20Windows-lightgrey?style=for-the-badge"/>
+<p align="center">
+  <img src="https://img.shields.io/badge/AWAIS%20X%20HASEEB-WPA2%20AUDIT%20ENGINE-red?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Version-v6.2%20ULTIMATE-brightgreen?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Python-3.7%2B-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Platform-Termux%20%7C%20Kali%20%7C%20Linux%20%7C%20macOS%20%7C%20Windows-lightgrey?style=for-the-badge"/>
 </p>
 
-### `CYBER TERMINAL • WPA2 • ANALYSIS • ENGINE • CLI`
+# AWAIS X HASEEB — WPA2 Audit Engine v6.2 ULTIMATE
 
-</div>
+**Built-in REAL WPA2 cracker — pure Python, NO external tools required.**
+Parses real `.cap` / `.pcap` / `.pcapng` captures, extracts 4-way
+handshakes and PMKIDs, and performs REAL PBKDF2-HMAC-SHA1 (4096) →
+PRF-512 PTK → EAPOL-Key MIC verification — the exact same mathematics
+used by aircrack-ng and hashcat.
 
-<div align="center">
+Works on **rooted Termux, Kali Linux, any Linux, macOS and Windows** —
+anywhere Python 3.7+ runs.
 
-> **⚡ COMMANDS ARE SEPARATED ONE-BY-ONE**
->
-> Every command is placed in its own code block so GitHub's built-in **Copy** button can be used individually.
-
-</div>
-
----
-
-# 🖥️ INTERFACE PREVIEW
-
-<div align="center">
-
-## `01` — MAIN TERMINAL MENU
-
-<img src="https://i.ibb.co/WNMkvPD7/Screenshot-20260923-131602.jpg" alt="AWAIS X HASEEB Main Menu" width="850"/>
-
-<br><br>
-
-## `02` — ATTACK / CRACK ENGINE
-
-<img src="https://i.ibb.co/LdYKxyzd/Screenshot-20260923-131630.jpg" alt="AWAIS X HASEEB Attack Engine" width="850"/>
-
-</div>
+> ⚠️ **EDUCATIONAL USE ONLY.** Test **ONLY** on WiFi networks you own
+> or have explicit written permission to audit.
 
 ---
 
-# ⚡ AWAIS X HASEEB — WPA2 AUDIT ENGINE
+## 🚀 Quick Start (GitHub Clone — Har Platform Pe Same)
 
-**v6.2 ULTIMATE**
-
-A powerful Python-based terminal application featuring a cyber-style interface, WPA2-related processing, capture analysis, wordlist tools, benchmark utilities, scanner functionality, reports, and multiple execution environments.
-
-The project is built with a modular Python architecture and a full interactive terminal menu.
-
----
-
-# 🔥 FEATURE OVERVIEW
-
-> `CORE ENGINE / MENU MATRIX`
-
-```text
-╔══════════════════════════════════════════════════════════════╗
-║              AWAIS X HASEEB — v6.2 ULTIMATE                ║
-╠══════════════════════════════════════════════════════════════╣
-║                                                              ║
-║  [1]  REAL WPA2 ATTACK                                      ║
-║  [2]  REAL ATTACK + CUSTOM LIST                             ║
-║  [3]  EXTERNAL FAST ENGINE                                  ║
-║  [m]  REAL + MUTATIONS                                      ║
-║  [k]  MASK BRUTE-FORCE                                      ║
-║  [n]  NETWORK SCANNER                                       ║
-║                                                              ║
-║  [4]  CAPTURE GUIDE                                         ║
-║  [5]  WORDLIST ANALYZER                                     ║
-║  [6]  ENGINE BENCHMARK                                      ║
-║  [7]  CONFIGURATION                                         ║
-║  [8]  VIEW REPORTS                                           ║
-║  [9]  ABOUT / DISCLAIMER                                    ║
-║  [c]  OPEN CHANNEL                                          ║
-║  [0]  EXIT                                                  ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
+```bash
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
+cd Wifi-Crack-Tool-
+python3 main.py --selftest      # proof it works (~10 sec)
+python3 main.py                 # run the tool
 ```
 
----
-
-# 🎯 ENGINE OPTIONS
-
-## `[1]` REAL WPA2 ATTACK
-
-Built-in WPA2 processing engine.
-
-```text
-[1] REAL WPA2 ATTACK
-    └── Built-in engine
-```
-
-Designed around the project's internal WPA2 processing workflow.
+Windows pe sirf `python3` ki jagah `py` likhna.
 
 ---
 
-## `[2]` REAL ATTACK + CUSTOM LIST
+## 📱 Platform Setup
 
-Custom wordlist workflow.
-
-```text
-[2] REAL ATTACK + CUSTOM LIST
-    ├── Select wordlist
-    ├── Process candidate entries
-    └── Display engine results
-```
-
----
-
-## `[3]` EXTERNAL FAST ENGINE
-
-External engine integration.
-
-```text
-[3] EXTERNAL FAST ENGINE
-    ├── External engine support
-    ├── High-performance processing
-    └── Result reporting
-```
-
----
-
-## `[m]` REAL + MUTATIONS
-
-Wordlist mutation workflow.
-
-```text
-[m] REAL + MUTATIONS
-    ├── Wordlist processing
-    ├── Case variations
-    ├── Prefix / suffix variations
-    └── Candidate generation
-```
-
----
-
-## `[k]` MASK BRUTE-FORCE
-
-Pattern-based candidate generation.
-
-Example pattern format:
-
-```text
-?l?l?l?l?d?d
-```
-
-The engine can process defined character patterns according to the project's configuration.
-
----
-
-## `[n]` NETWORK SCANNER
-
-Network discovery interface.
-
-```text
-[n] NETWORK SCANNER
-    ├── Nearby network discovery
-    ├── Network information
-    └── Terminal results
-```
-
----
-
-# 🧰 TOOLS & ANALYSIS
-
-## `[4]` CAPTURE GUIDE
-
-Provides the project's capture-related workflow and information.
-
-```text
-[4] CAPTURE GUIDE
-    ├── Capture information
-    ├── Handshake-related workflow
-    └── PMKID-related workflow
-```
-
----
-
-## `[5]` WORDLIST ANALYZER
-
-Analyze a wordlist before processing.
-
-```text
-[5] WORDLIST ANALYZER
-    ├── Total entries
-    ├── Character statistics
-    ├── Length information
-    └── Processing estimates
-```
-
----
-
-## `[6]` ENGINE BENCHMARK
-
-Measure engine performance on the current machine.
-
-```text
-[6] ENGINE BENCHMARK
-    ├── Processing speed
-    ├── PMK/s measurement
-    ├── Runtime statistics
-    └── Performance information
-```
-
----
-
-## `[7]` CONFIGURATION
-
-Manage application configuration and runtime settings.
-
-```text
-[7] CONFIGURATION
-    ├── Session settings
-    ├── Threads
-    ├── Timeout
-    └── Runtime preferences
-```
-
----
-
-## `[8]` VIEW REPORTS
-
-View generated session reports.
-
-```text
-[8] VIEW REPORTS
-    ├── Session results
-    ├── Benchmark results
-    ├── Analysis information
-    └── Saved reports
-```
-
----
-
-# 🧬 WPA2 PROCESSING PIPELINE
-
-The project documentation describes a WPA2-related processing chain based around:
-
-```text
-CAP / PCAP / PCAPNG
-        ↓
-CAPTURE PARSING
-        ↓
-HANDSHAKE / PMKID DATA
-        ↓
-PBKDF2-HMAC-SHA1
-        ↓
-PRF / PTK PROCESSING
-        ↓
-EAPOL-KEY MIC VERIFICATION
-        ↓
-ENGINE RESULT
-        ↓
-REPORT
-```
-
----
-
-# 📊 PERFORMANCE
-
-> `ENGINE BENCHMARK / REFERENCE`
-
-Performance varies by CPU, operating system, Python version, hardware, workload, and configuration.
-
-The project documentation lists these approximate reference ranges:
-
-| Engine | Approx. Speed |
-|:---|---:|
-| 🐍 Built-in Pure Python | `100–2,000 PMK/s` |
-| ⚡ aircrack-ng integration | `5,000–50,000/s` |
-| 🚀 hashcat GPU | `50,000–500,000+/s` |
-
-These figures are reference values rather than guaranteed results for every device.
-
----
-
-# 🖥️ PLATFORM SUPPORT
-
-| Platform | Status |
-|:---|:---:|
-| 📱 Termux | ✅ |
-| 🐉 Kali Linux | ✅ |
-| 🐧 Linux | ✅ |
-| 🍎 macOS | ✅ |
-| 🪟 Windows | ✅ |
-
-Python `3.7+` is used by the project.
-
----
-
-# 📋 COMMAND COPY INDEX
-
-Use the individual **Copy** button on each command block below.
-
-| Platform | Sections |
-|:---|:---|
-| 📱 Termux | Update → Install → Clone → Enter → Self-Test → Start |
-| 🐉 Kali | Update → Install → Clone → Enter → Self-Test → Start |
-| 🐧 Linux | Update → Install → Clone → Enter → Self-Test → Start |
-| 🍎 macOS | Python → Clone → Enter → Self-Test → Start |
-| 🪟 Windows | Clone → Enter → Self-Test → Start |
-| 📦 ZIP | Extract → Enter → Self-Test → Start |
-| 🔄 GitHub | Add → Commit → Push |
-
----
-
-# 🚀 QUICK START
-
-## 🤖 TERMUX
+### 🤖 Rooted Android — Termux
 
 ```bash
 pkg update && pkg upgrade -y
-```
-
-```bash
 pkg install git python -y
-```
-
-```bash
 git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
-```
-
-```bash
 cd Wifi-Crack-Tool-
-```
-
-```bash
 python main.py --selftest
-```
-
-```bash
 python main.py
+
+# OPTIONAL — external engine + capture tools (root needed for capture):
+pkg install root-repo -y
+pkg install aircrack-ng hcxtools -y
+su -c "airmon-ng start wlan0"
 ```
 
----
-
-## 🐉 KALI LINUX
+### 🐉 Kali Linux
 
 ```bash
 sudo apt update
+sudo apt install -y git python3 aircrack-ng hcxtools
+git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
+cd Wifi-Crack-Tool-
+python3 main.py --selftest
+python3 main.py
+
+# capture a handshake from YOUR network:
+sudo airmon-ng start wlan0
+sudo airodump-ng -c <CHANNEL> --bssid <BSSID> -w capture wlan0mon
+# (the tool's menu [4] shows the full step-by-step guide)
 ```
+
+### 💻 Ubuntu / Debian / any Linux
 
 ```bash
 sudo apt install -y git python3
-```
-
-```bash
 git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
-```
-
-```bash
 cd Wifi-Crack-Tool-
-```
-
-```bash
 python3 main.py --selftest
-```
-
-```bash
 python3 main.py
 ```
 
----
-
-## 💻 UBUNTU / DEBIAN / LINUX
+### 🍎 macOS
 
 ```bash
-sudo apt update
-```
-
-```bash
-sudo apt install -y git python3
-```
-
-```bash
+brew install python3            # if not already installed
 git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
-```
-
-```bash
 cd Wifi-Crack-Tool-
-```
-
-```bash
 python3 main.py --selftest
-```
-
-```bash
 python3 main.py
 ```
 
----
-
-## 🍎 macOS
-
-```bash
-brew install python3
-```
-
-```bash
-git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
-```
-
-```bash
-cd Wifi-Crack-Tool-
-```
-
-```bash
-python3 main.py --selftest
-```
-
-```bash
-python3 main.py
-```
-
----
-
-## 🪟 WINDOWS — CMD / POWERSHELL
+### 🪟 Windows (CMD / PowerShell)
 
 ```bat
 git clone https://github.com/xhackers209/Wifi-Crack-Tool-.git
-```
-
-```bat
 cd Wifi-Crack-Tool-
-```
-
-```bat
 py main.py --selftest
-```
-
-```bat
 py main.py
 ```
 
+(aircrack-ng is not native to Windows — the **built-in engine is fully
+functional** on Windows. For capture, use WSL, Kali VM, or a Linux
+machine, then copy the `.cap` file over.)
+
 ---
 
-# 📦 ZIP INSTALLATION
+## 📦 ZIP Se Install (Agar GitHub Na Chale)
 
 ```bash
 unzip WIFI_BLACKBOX_v6.2_ULTIMATE.zip
-```
-
-```bash
 cd WIFI_BLACKBOX_v6.2_ULTIMATE
-```
-
-```bash
 python3 main.py --selftest
-```
-
-```bash
 python3 main.py
 ```
 
 ---
 
-# 🧪 SELF-TEST
+## 🎯 Practical Demo Flow (Your Own Network)
 
-Linux / Termux / macOS:
-
-```bash
-python3 main.py --selftest
-```
-
-Windows:
-
-```bat
-py main.py --selftest
-```
-
----
-
-# 📁 PROJECT STRUCTURE
-
-```text
-Wifi-Crack-Tool-/
-│
-├── main.py
-│   └── Main entry point + interactive menus
-│
-├── handshake.py
-│   └── Capture parser + WPA2 processing
-│
-├── engine.py
-│   └── Core engine + threading + benchmark
-│
-├── rules.py
-│   └── Mutations + mask engine
-│
-├── scanner.py
-│   └── WiFi scanner
-│
-├── capture.py
-│   └── Capture / external integration
-│
-├── wordlist.py
-│   └── Wordlist processing + analyzer
-│
-├── selftest.py
-│   └── Self-test system
-│
-├── ui.py
-│   └── Terminal UI helpers
-│
-├── banner.py
-│   └── Banner + colors
-│
-├── install.sh
-│   └── Installation helper
-│
-├── .gitignore
-│   └── Ignore rules
-│
-├── reports/
-│   └── Generated reports
-│
-└── lab/
-    └── Generated files / test data
-```
+| Step | Menu | What it proves |
+|---|---|---|
+| 0 | `p` Practice Lab | **Bundled REAL sample — instant 30-sec demo** |
+| 1 | `6` Benchmark | Real PBKDF2 speed on your machine |
+| 2 | `n` Scanner | Nearby networks — no root needed |
+| 3 | `4` Capture Guide | Exact airmon/airodump commands |
+| 4 | `1` REAL WPA2 Attack | **Real password recovery from .cap** |
+| 5 | `m` Mutations | Cracks `john` → `John123!` style passwords |
+| 6 | `k` Mask Attack | Brute-force `?l?l?l?l?d?d` patterns |
+| 7 | `5` Analyzer | Wordlist stats + crack-time estimate |
+| 8 | `8` Reports | Saved report for the examiner |
 
 ---
 
-# ⚙️ CONFIGURATION
+## 🎯 Instant Demo (No Capture Needed)
 
-The main terminal configuration includes options such as:
-
-```text
-SESSION CONFIG
-
-├── SSID
-├── Threads
-├── Timeout
-└── Wordlist
-```
-
-Example interface:
-
-```text
-┌─────────────────────────────────────────┐
-│ SESSION CONFIG                          │
-├─────────────────────────────────────────┤
-│ SSID       : <configured target>        │
-│ Threads    : 4                          │
-│ Timeout    : 120s                       │
-│ Wordlist   : <selected file>            │
-└─────────────────────────────────────────┘
-```
-
----
-
-# 📋 REPORT SYSTEM
-
-The project includes a report-oriented workflow.
-
-Typical report information can include:
-
-```text
-SESSION
-ENGINE
-CONFIGURATION
-WORDLIST
-BENCHMARK
-RESULT
-TIMESTAMP
-STATUS
-```
-
-Reports are stored inside:
-
-```text
-reports/
-```
-
----
-
-# 🧩 COMMAND REFERENCE
-
-### Start application
+`samples/` folder mein **REAL practice files** bundled hain:
 
 ```bash
 python3 main.py
+# phir menu se [p] (Practice Lab) dabao
 ```
 
-### Self-test
+Tool khud `samples/practice.cap` (REAL WPA2 handshake) ko
+`samples/wordlist.txt` se crack karega — 30 second mein full demo,
+kuch aur setup nahi chahiye.
+
+## 📁 Project Structure
+
+```
+├── main.py        # entry point + all menus
+├── handshake.py   # REAL capture parser + WPA2 crypto
+├── engine.py      # attack engine (threads, iterator, benchmark)
+├── rules.py       # mutations + mask engine
+├── scanner.py     # passive WiFi scanner (4 platforms)
+├── capture.py     # aircrack-ng / hashcat external integration
+├── wordlist.py    # wordlist tools + analyzer
+├── selftest.py    # --selftest proof mode
+├── ui.py          # display helpers
+├── banner.py      # banner + colors
+├── install.sh     # auto-installer
+├── .gitignore     # keeps captures & generated files out of git
+├── samples/       # practice.cap + wordlist.txt (REAL bundled demo)
+├── reports/       # auto-saved session reports
+└── lab/           # generated wordlists & test files
+```
+
+---
+
+## ⚡ Honest Performance
+
+| Engine | Speed | Best for |
+|---|---|---|
+| Built-in (pure Python) | ~100–2000 PMK/s | Practical demos, weak passwords, mutations |
+| aircrack-ng (menu 3) | ~5k–50k/s | Medium wordlists |
+| hashcat GPU (menu 3) | ~50k–500k+/s | Huge wordlists, big masks |
+
+WPA2 uses PBKDF2-HMAC-SHA1 with 4096 iterations by design — that is
+what makes WiFi secure. Dictionary attacks succeed against **weak or
+common passwords**; long random passwords remain impractical to crack
+on any platform.
+
+---
+
+## 🧪 Self-Test
 
 ```bash
 python3 main.py --selftest
 ```
 
-### Windows
-
-```bat
-py main.py
-```
-
-### Windows self-test
-
-```bat
-py main.py --selftest
-```
+Runs three checks: capture parsing, a REAL crack against a synthetic
+handshake, and an engine benchmark. Exit code `0` = everything works.
 
 ---
 
-# 🔄 GITHUB DEVELOPMENT
+## ⚠️ Disclaimer
 
-## Standard Update
+This software is provided for **authorized security education and
+auditing only**. You must only test networks you **own** or have
+**explicit written permission** to assess. Unauthorized access to
+computer networks is a criminal offence in most jurisdictions.
+The authors accept no liability for misuse.
+
+---
+
+## 📤 Developers — Code Push/Update Karne Ka Tareeqa
 
 ```bash
+cd Wifi-Crack-Tool-
 git add .
-```
-
-```bash
-git commit -m "Update engine and documentation"
-```
-
-```bash
+git commit -m "describe your change"
 git push
 ```
 
-## First Repository Setup
+**Pehli baar push (agar repo khali hai):**
 
 ```bash
 git init
-```
-
-```bash
 git add .
-```
-
-```bash
-git commit -m "v6.2 ULTIMATE — initial release"
-```
-
-```bash
+git commit -m "v6.2 ULTIMATE — real WPA2 audit engine"
 git branch -M main
-```
-
-```bash
 git remote add origin https://github.com/xhackers209/Wifi-Crack-Tool-.git
-```
-
-```bash
 git push -u origin main
 ```
 
----
+**Note:** GitHub password se push nahi hone deta — **Personal Access Token (PAT)** chahiye:
+1. GitHub → Settings → Developer Settings → Personal Access Tokens → Tokens (classic)
+2. "repo" permission ke saath token banao
+3. Push karte waqt password ki jagah token paste karo
 
-# 🔐 PROJECT HYGIENE
-
-Do not commit sensitive files to the repository.
-
-Recommended exclusions:
-
-```text
-*.cap
-*.pcap
-*.pcapng
-.env
-*.key
-*.token
-private/
-secrets/
-```
-
-Keep private credentials and personal data outside the repository.
-
----
-
-# 👨‍💻 DEVELOPMENT BY
-
-> `BUILD • AUTOMATION • CUSTOM DEVELOPMENT`
-
-<div align="center">
-
-## ⚡ AWAIS X HASEEB HACKER
-
-**Python • Automation • Cyber Tools • Custom Development**
-
-</div>
-
----
-
-# 🛠️ CUSTOM DEVELOPMENT
-
-Need a custom tool or software project?
-
-Available development categories:
-
-```text
-🤖 Telegram Bots
-🐍 Python Tools
-⚙️ Automation
-🌐 Web Applications
-🔌 API Integrations
-📊 Dashboards
-🧩 Developer Utilities
-🛠️ Custom Software
-```
-
-### Project Requirement Format
-
-```text
-Project Name:
-Project Type:
-Required Features:
-Platform:
-Technology:
-Deadline:
-Budget:
-Additional Requirements:
-```
-
----
-
-# 📲 CONTACT & OFFICIAL CHANNELS
-
-> `DIRECT CONTACT • WHATSAPP • TELEGRAM • DEVELOPMENT`
-
-<div align="center">
-
-### 💬 Direct Contact
-
-<a href="https://t.me/awaishacker01">
-  <img src="https://img.shields.io/badge/Telegram-@awaishacker01-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
-</a>
-
-<a href="https://wa.me/923295533119">
-  <img src="https://img.shields.io/badge/WhatsApp-Direct%20Contact-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp Direct Contact"/>
-</a>
-
-<br><br>
-
-### 📢 Official WhatsApp Channel
-
-<a href="https://whatsapp.com/channel/0029VbBzlMlIt5rzSeMBE922">
-  <img src="https://img.shields.io/badge/Join%20Our%20WhatsApp%20Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Join WhatsApp Channel"/>
-</a>
-
-<br><br>
-
-### 👨‍💻 Development & Hiring
-
-<a href="https://t.me/awaishacker01">
-  <img src="https://img.shields.io/badge/Hire%20Us%20for%20Custom%20Development-111111?style=for-the-badge&logo=telegram&logoColor=white" alt="Hire Us"/>
-</a>
-
-</div>
-
-### 📌 Contact Details
-
-- **Telegram:** `@awaishacker01`
-- **WhatsApp:** `+92 329 5533119`
-- **WhatsApp Channel:** Official channel for updates and content
-- **Development:** **AWAIS X HASEEB HACKER**
-
-### 🔗 Quick Buttons
-
-| Contact | Button |
-|---|---|
-| 📱 Telegram | [**Open Telegram**](https://t.me/awaishacker01) |
-| 💬 WhatsApp Direct | [**Message on WhatsApp**](https://wa.me/923295533119) |
-| 📢 WhatsApp Channel | [**Join WhatsApp Channel**](https://whatsapp.com/channel/0029VbBzlMlIt5rzSeMBE922) |
-| 👨‍💻 Custom Development | [**Contact for Development**](https://t.me/awaishacker01) |
-
----
-
-# 🔗 GITHUB
-
-```text
-https://github.com/xhackers209/Wifi-Crack-Tool-.git
-```
-
----
-
-# ⭐ PROJECT INFORMATION
-
-```text
-╔════════════════════════════════════════════════════╗
-║                 PROJECT INFORMATION                ║
-╠════════════════════════════════════════════════════╣
-║ Project       : WPA2 Audit Engine                  ║
-║ Version       : v6.2 ULTIMATE                      ║
-║ Language      : Python 3.7+                        ║
-║ Interface     : Terminal / CLI                     ║
-║ Developer     : Awais x Haseeb Hacker              ║
-║ Telegram      : @awaishacker01                     ║
-║ WhatsApp      : +92 329 5533119                    ║
-╚════════════════════════════════════════════════════╝
-```
-
----
-
-<div align="center">
-
-## 🚀 CONNECT WITH US
-
-<a href="https://t.me/awaishacker01">
-  <img src="https://img.shields.io/badge/💬%20Telegram-Join%20%2F%20Contact-2CA5E0?style=for-the-badge" alt="Telegram"/>
-</a>
-<a href="https://wa.me/923295533119">
-  <img src="https://img.shields.io/badge/💚%20WhatsApp-Direct%20Chat-25D366?style=for-the-badge" alt="WhatsApp"/>
-</a>
-<a href="https://whatsapp.com/channel/0029VbBzlMlIt5rzSeMBE922">
-  <img src="https://img.shields.io/badge/📢%20WhatsApp-Official%20Channel-128C7E?style=for-the-badge" alt="WhatsApp Channel"/>
-</a>
-
-</div>
-
----
-
-<div align="center">
-
-# ⚡ AWAIS X HASEEB HACKER ⚡
-
-### WPA2 AUDIT ENGINE — v6.2 ULTIMATE
-
-`PYTHON` • `WPA2` • `CLI` • `ANALYSIS` • `ENGINE` • `REPORTS`
-
-**Built with Python. Designed with a cyber-terminal aesthetic.**
-
-</div>
+> `.gitignore` ki wajah se `.cap` captures, reports aur generated files
+> kabhi repo mein push nahi hote — sirf code push hota hai ✅
